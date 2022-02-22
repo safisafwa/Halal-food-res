@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | General Form Elements</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <!-- Brand Logo -->
+  <a href="../../index.html" class="brand-link">
+    <span class="brand-text font-weight-light">Halal Foods</span>
+  </a>
+  <div class="sidebar">
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+
+        <!-- Add icons to the links using the .nav-icon class
+         with font-awesome or any other icon font library -->
+        <li class="nav-item menu-open">
+          <a href="../../index.html" class="nav-link">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Dashboard
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-edit"></i>
+            <p>
+              Shops
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="../forms/shopform.html" class="nav-link active">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Add Shops</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="../tables/shopsdata.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>View Shops</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p>
+              Users
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="../tables/Userdata.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>View Users</p>
+              </a>
+            </li>
+            </ul>
+        </li>
+          </ul>
+    </nav>
+  </div>
+</aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Add Shops</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active">Add Shops</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add a Shop</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="shopInputName">Shop Name</label>
+                    <input type="text" class="form-control" id="shopInputName" placeholder="Enter Shop Name" required>
+                  </div>
+                    <div class="form-group">
+                      <label for="shopInputEmail">Shop address</label>
+                      <input type="text" class="form-control" id="shopInputAddress" placeholder="Enter Address" required>
+                    </div>
+                      <div class="form-group">
+                        <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" placeholder="Enter Shop Description" required></textarea>
+                        </textarea>
+                      </div>
+                  <div class="form-group">
+                    <label for="shopInputEmail">Email address</label>
+                    <input type="email" class="form-control" id="shopInputEmail" placeholder="Enter email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="shopInputPhoneNumber">Phone Number</label>
+                    <input type="number" class="form-control" id="shopInputPhoneNumber" placeholder="Phone Number" required>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-md-6">
+                    <label for="shopLong">Longitude</label>
+                    <input type="number" class="form-control" id="shopLong" placeholder="Longitude" required>
+                    </div>
+                    <div class="col-md-6">
+                    <label for="shopLat">Latitude</label>
+                    <input type="number" class="form-control" id="shopLat" placeholder="Latitude" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="shopInputFile">File input</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="shopInputFile" accept="image/*">
+                        <label class="custom-file-label" for="InputFile">Choose file</label>
+                      </div>
+                      <button type="submit" class="btn btn-success" id="uploadBtn" onclick="uploadImg()">Upload</button>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped bg-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progressBar"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary" id="addShopBtn">Add Shop</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+
+<!-- scripting for datatable and forms -->
+<script src="../../dist/js/script.js"></script>
+<script>
+$(function () {
+  bsCustomFileInput.init();
+});
+</script>
+</body>
+</html>
